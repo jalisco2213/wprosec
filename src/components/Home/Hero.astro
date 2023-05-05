@@ -1,0 +1,112 @@
+---
+import LineSVG from "../svg/LineSVG.astro";
+
+const actcenter = [
+    {
+        id: "a1",
+        title: "Прокурор нарушил Ваши права? Оставьте жалобу на него.",
+        img: "/svgAction/crime1.svg",
+        link: "https://forum.arizona-rp.com/threads/4602187/",
+    },
+    {
+        id: "a2",
+        title: "Вас задержали без причины или же нарушили ваши права? Поможем!",
+        img: "/svgAction/crime.svg",
+        link: "https://forum.arizona-rp.com/threads/4602187/",
+    },
+    {
+        id: "a3",
+        title: "Подать жалобу в суд.",
+        img: "/svgAction/justice.svg",
+        link: "https://forum.arizona-rp.com/forums/1438/",
+    },
+    {
+        id: "a4",
+        title: "Конституция штата Winslow.",
+        img: "/svgAction/capitol.svg",
+        link: "https://forum.arizona-rp.com/threads/5967642/",
+    },
+    {
+        id: "a5",
+        title: 'Фед. закон "О прокуратуре".',
+        img: "/svgAction/capitol.svg",
+        link: "https://forum.arizona-rp.com/threads/4712079/",
+    },
+    {
+        id: "a6",
+        title: "Уголовный & Административный кодексы.",
+        img: "/svgAction/prison.svg",
+        link: "https://forum.arizona-rp.com/threads/4712105/",
+    },
+];
+---
+
+<div class="container hero">
+    <div class="hero-container">
+        <h2 class="hero-title">Центр событий</h2>
+        <LineSVG />
+        <div class="action">
+            {
+                actcenter.map((item) => (
+                    <div class="action-info" data-idx={item.id}>
+                        <div class="action-info_img">
+                            <img src={item.img} alt="" />
+                        </div>
+                        <a href={item.link}>{item.title}</a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .hero {
+        margin-bottom: 6rem;
+    }
+
+    .hero-container {
+        @include mixins.flipdisp;
+    }
+
+    .action {
+        display: grid;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-template-columns: repeat(3, 330px);
+
+        &-info {
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            color: #2e2e2a;
+            border-bottom: 3px dotted #c6c6c6;
+            cursor: pointer;
+
+            &:hover {
+                background: #162e51;
+                color: #eee;
+                border-bottom: none;
+            }
+
+            &:nth-last-child(-n + 3) {
+                border-bottom: none;
+            }
+
+            & img {
+                margin-right: 0.5rem;
+            }
+
+            & a {
+                font-size: .95rem;
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+                width: 282px;
+                height: 100%;
+            }
+        }
+    }
+</style>

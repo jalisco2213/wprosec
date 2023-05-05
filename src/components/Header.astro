@@ -1,0 +1,93 @@
+---
+import SearchSVG from "./svg/SearchSVG.astro";
+
+const head = [
+    {
+        id: "0",
+        title: "О нас",
+        link: "/",
+    },
+    {
+        id: "1",
+        title: "Наша миссия",
+        link: "/missions",
+    },
+    {
+        id: "2",
+        title: "Новости",
+        link: "",
+    },
+    {
+        id: "3",
+        title: "Руководство",
+        link: "",
+    },
+    {
+        id: "4",
+        title: "Работа",
+        link: "",
+    },
+];
+---
+
+<div class="container jusc-container">
+    <div class="reg-header">
+        <div class="nav-just">
+            <div class="usa-logo">
+                <a href="/">
+                    <img
+                        src="/logo.svg"
+                        alt=""
+                        style="width: 18.75rem; height: 6.25rem"
+                    />
+                </a>
+            </div>
+            <div class="usa-place">
+                <ul class="usa-place_menu">
+                    <li>
+                        <a
+                            href="https://forum.arizona-rp.com/threads/4712079/"
+                            target="_blank">Фед.закон</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="https://forum.arizona-rp.com/threads/4602187/"
+                            target="_blank">Попросить помощи</a
+                        >
+                    </li>
+                </ul>
+                <form class="usa-search">
+                    <input class="usa-search_input" placeholder="Искать..." />
+                    <button>
+                        <SearchSVG />
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="jusc-sec_cont">
+        <nav class="nav">
+            <ul class="nav-link">
+                {
+                    head.map((item) => (
+                        <li data-idx={item.id}>
+                            <a href={item.link}>
+                                <span>{item.title}</span>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .nav-just,
+    .nav {
+        @include mixins.flipdisp;
+    }
+</style>

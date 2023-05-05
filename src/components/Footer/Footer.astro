@@ -1,0 +1,95 @@
+---
+import FooterPrimary from "./FooterPrimary.astro";
+import FooterSecondary from "./FooterSecondary.astro";
+---
+<div class="footer-container">
+    <div class="footer-head">
+        <div class="footer-head_title">
+            <div class="footer-head_title_img">
+                <img src="/logo.svg" alt="logo">
+            </div>
+            <div class="footer-head_title_primary">
+                <FooterPrimary
+                        img='/footerSVG/mail.svg' ,
+                        title='U.S. Department of Justice' ,
+                        subtitle='Los-Santos, USA'
+                />
+                <FooterPrimary
+                        img='/footerSVG/phone.svg' ,
+                        title='Свяжитесь с нами' ,
+                        subtitle='Phone: 3377769'
+                />
+                <FooterPrimary
+                        img='/footerSVG/smartphone.svg' ,
+                        title='Мы в соц.сетях' ,
+                        subtitle=''
+                />
+            </div>
+        </div>
+    </div>
+    <div class="secondary">
+        <div class="secondary-list">
+            <FooterSecondary
+                    ul1='Конституция штата' ,
+                    link1='https://forum.arizona-rp.com/threads/5967642/' ,
+                    ul2='Федеральный закон' ,
+                    link2='https://forum.arizona-rp.com/threads/4712079/' ,
+                    ul3='Уголовный кодекс' ,
+                    link3='https://forum.arizona-rp.com/threads/4712105/'
+            />
+            <FooterSecondary
+                    ul1='Администрация прокуратуры США' ,
+                    link1='https://forum.arizona-rp.com/threads/4602187/' ,
+                    ul2='Штрафные санкции' ,
+                    link2='https://forum.arizona-rp.com/threads/5982584/' ,
+                    ul3='Постановления прокуратуры' ,
+                    link3='https://forum.arizona-rp.com/threads/4602146/' ,
+                    ul4='Для сотрудников' ,
+                    link4='#'
+            />
+            <FooterSecondary
+                    ul1='Трудоустройство' ,
+                    link1='#' ,
+                    ul2='Новости' ,
+                    link2='#'
+            />
+        </div>
+    </div>
+</div>
+
+<style is:global lang="scss">
+    @use '/src/assets/mixin' as mixins;
+    .footer-head {
+        background: #2e2e2a;
+        border-top: #ffbe2e 3px solid;
+        border-bottom: #ffbe2e 0.03125rem solid;
+
+    &_title {
+        @include mixins.flipdisp;
+        padding-top: 3rem;
+
+    &_img {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    &_primary {
+        padding: 2rem 0 1rem 0;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    }
+    }
+
+    .secondary {
+        background: #171716;
+
+    &-list {
+        @include mixins.flipdisp;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    }
+</style>

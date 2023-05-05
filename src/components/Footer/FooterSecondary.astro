@@ -1,0 +1,25 @@
+---
+const {ul1, link1, ul2, link2, ul3, link3, ul4, link4} = Astro.props
+---
+
+<ul>
+    <li><a href={link1}>{ ul1 }</a></li>
+    <li><a href={link2}>{ ul2 }</a></li>
+    <li><a href={link3}>{ ul3 }</a></li>
+    <li><a href={link4}>{ ul4 }</a></li>
+</ul>
+
+<style lang="scss">
+    ul {
+        margin: 50px 0;
+    & li {
+          font-size: 1.2rem;
+          line-height: 2;
+
+    &:hover {
+         color: #ffbe2e;
+         text-decoration: underline;
+     }
+    }
+    }
+</style>

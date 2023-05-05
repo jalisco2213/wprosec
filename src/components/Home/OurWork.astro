@@ -1,0 +1,119 @@
+---
+import LineSVG from "../svg/LineSVG.astro";
+const work = [
+    {
+        id: "0",
+        img: "/iera.png",
+        title: "Структура и иерархия прокуратуры",
+        subtitle:
+            "Прокуратура состоит из нескольких компонентов, занимающихся выполнением общей миссии.",
+        btn: "Посмотреть организационную схему",
+        link: "#",
+    },
+    {
+        id: "1",
+        img: "/iera1.png",
+        title: "Тематические области и программы.",
+        subtitle: "Узнайте больше о нашей работе по различным темам.",
+        btn: "Подробнее о нашей работе",
+        link: "/missions",
+    },
+];
+---
+
+<div class="work-container">
+    <h2>Наша работа</h2>
+    <LineSVG />
+    <div class="field">
+        {
+            work.map((item) => (
+                <div class="field-item" data-idx={item.id}>
+                    <div class="field-item_header">
+                        <img src={item.img} alt="" />
+                    </div>
+                    <div class="field-item_info">
+                        <h3>{item.title}</h3>
+                        <p>{item.subtitle}</p>
+                    </div>
+                    <a href={item.link} class="scheme">
+                        <span>{item.btn}</span>
+                    </a>
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<style is:global lang="scss">
+    @use "/src/assets/mixin" as mixins;
+
+    .work-container {
+        @include mixins.flipdisp;
+        margin-bottom: 6.25rem;
+    }
+
+    .field {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .field-item {
+        background: white;
+        width: 28.125rem;
+        height: 33rem;
+        box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.5);
+
+        &_header {
+            display: flex;
+            justify-content: center;
+
+            & img {
+                width: 24rem;
+                height: 21rem;
+                margin: 10px auto;
+            }
+        }
+
+        &_info {
+            margin-left: 0.9375rem;
+            width: 25rem;
+
+            & h3 {
+                font-weight: 500;
+                margin-top: 0.6rem;
+                margin-bottom: 0.8rem;
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: #07648d;
+                line-height: 1;
+            }
+
+            & p {
+                color: #666;
+                line-height: 1;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .scheme {
+        margin: 1.3rem auto;
+        width: 20rem;
+        height: 2.5rem;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #162e51;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background: #005ea2;
+        }
+
+        & span {
+            font-weight: 700;
+        }
+    }
+</style>
