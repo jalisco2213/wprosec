@@ -1,0 +1,33 @@
+---
+import LineSVG from "../components/svg/LineSVG.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Prosecutor | Structure of prosecutor's">
+    <section>
+        <div class="struct-container">
+            <h2>Структура организации</h2>
+            <LineSVG />
+            <div class="struct-img">
+                <img
+                    src="/iera.png"
+                    alt="struct"
+                    style="width: 37.5rem; height: 37.5rem;"
+                />
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<style lang="scss">
+    @use "/src/assets/mixin" as mixins;
+    .struct-container {
+        @include mixins.flipdisp;
+        margin-bottom: 100px;
+    }
+
+    .struct-img {
+        display: flex;
+        justify-content: center;
+    }
+</style>
