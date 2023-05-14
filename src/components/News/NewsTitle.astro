@@ -1,0 +1,44 @@
+---
+import LineSVG from "../svg/LineSVG.astro";
+
+const newsInfo = [
+    {
+        id: "0",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jeff_Sessions%2C_official_portrait_%28cropped%29.jpg/640px-Jeff_Sessions%2C_official_portrait_%28cropped%29.jpg",
+        title: "Государственный прокурор в отставке",
+        subtitle:
+            "13 мая 2023, Государственный прокурор в лице Нейла Армстронга, покинул пост. Причины не разглашаются.",
+    },
+    {
+        id: "1",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jeff_Sessions%2C_official_portrait_%28cropped%29.jpg/640px-Jeff_Sessions%2C_official_portrait_%28cropped%29.jpg",
+        title: "Государственный прокурор в отставке",
+        subtitle:
+            "13 мая 2023, Государственный прокурор в лице Нейла Армстронга, покинул пост. Причины не разглашаются.",
+    },
+];
+---
+
+<div class="news-container">
+    <div class="news-usa">
+        <h2>Новости прокуратуры</h2>
+        <LineSVG />
+        <div class="news-link">
+            {
+                newsInfo.map((item) => (
+                    <div class="news-list" data-idx={item.id}>
+                        <div class="news-list-item">
+                            <img src={item.img} alt="img" />
+                            <span>{item.title}</span>
+                            <p>{item.subtitle}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    
+</style>
