@@ -1,33 +1,5 @@
 ---
 import SearchSVG from "./svg/SearchSVG.astro";
-
-const head = [
-    {
-        id: "0",
-        title: "О нас",
-        link: "/",
-    },
-    {
-        id: "1",
-        title: "Наша миссия",
-        link: "/missions",
-    },
-    {
-        id: "2",
-        title: "Новости",
-        link: "/news",
-    },
-    {
-        id: "3",
-        title: "Руководство",
-        link: "",
-    },
-    {
-        id: "4",
-        title: "Работа",
-        link: "",
-    },
-];
 ---
 
 <div class="container jusc-container">
@@ -68,17 +40,33 @@ const head = [
     </div>
     <div class="jusc-sec_cont">
         <nav class="nav">
-            <ul class="nav-link">
-                {
-                    head.map((item) => (
-                        <li data-idx={item.id}>
-                            <a href={item.link}>
-                                <span>{item.title}</span>
-                            </a>
-                        </li>
-                    ))
-                }
-            </ul>
+            <div class="nav-link">
+                <a href="/">Главная</a>
+                <div class="dropdown">
+                    <button class="dropbtn"
+                        >О нас
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/management">Государственный прокурор</a>
+                        <a href="/structure">Организационная структура</a>
+                    </div>
+                </div>
+                <a href="/missions"> Наша миссия</a>
+                <a href="/jobs"> Работа</a>
+                <div class="dropdown">
+                    <button class="dropbtn"
+                        >Законодательство
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="https://forum.arizona-rp.com/threads/4712079/" target="_blank">Закон "О прокуратуре"</a>
+                        <a href="https://forum.arizona-rp.com/threads/5967642/" target="_blank">Конституция</a>
+                        <a href="https://forum.arizona-rp.com/threads/4712105/" target="_blank">Уголовный и административный кодексы</a>
+                        <a href="https://forum.arizona-rp.com/threads/5089213/" target="_blank">Трудовой кодекс</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
 </div>
@@ -166,11 +154,10 @@ const head = [
         &-link {
             display: flex;
             align-items: center;
-            height: 4.2rem;
 
             & a {
                 font-size: 1rem;
-                font-weight: 500;
+                font-weight: 400;
                 padding: 1.5rem;
                 color: #eee;
                 background: inherit;
@@ -182,5 +169,45 @@ const head = [
                 }
             }
         }
+    }
+
+    .dropdown .dropbtn {
+        font-size: 16px;
+        color: white;
+        padding: 1.41rem;
+        background-color: inherit;
+        cursor: pointer;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: #ffbe2e;
+        color: #000000;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 </style>

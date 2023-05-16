@@ -49,10 +49,10 @@ const actcenter = [
             {
                 actcenter.map((item) => (
                     <div class="action-info" data-idx={item.id}>
-                        <div class="action-info_img">
+                        <div class="action-info-link">
                             <img src={item.img} alt="" />
+                            <a href={item.link}>{item.title}</a>
                         </div>
-                        <a href={item.link}>{item.title}</a>
                     </div>
                 ))
             }
@@ -78,34 +78,40 @@ const actcenter = [
         grid-template-columns: repeat(3, 330px);
 
         &-info {
-            height: 6rem;
-            display: flex;
-            align-items: center;
-            color: #2e2e2a;
+            line-height: 1.3;
+            padding: 2px 0;
             border-bottom: 3px dotted #c6c6c6;
             cursor: pointer;
 
-            &:hover {
-                background: #162e51;
-                color: #eee;
+            &-link {
+                height: 6rem;
+                display: flex;
+                align-items: center;
+                color: #2e2e2a;
                 border-bottom: none;
+
+                &:hover {
+                    background: #162e51;
+                    color: #eee;
+                    border-bottom: none;
+                }
+
+                & img {
+                    margin-right: 0.7rem;
+                }
+
+                & a {
+                    font-size: 0.95rem;
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    width: 282px;
+                    height: 100%;
+                }
             }
 
             &:nth-last-child(-n + 3) {
                 border-bottom: none;
-            }
-
-            & img {
-                margin-right: 0.5rem;
-            }
-
-            & a {
-                font-size: 0.95rem;
-                font-weight: 500;
-                display: flex;
-                align-items: center;
-                width: 282px;
-                height: 100%;
             }
         }
     }

@@ -1,0 +1,27 @@
+---
+import LineSVG from "../svg/LineSVG.astro";
+
+const jobs = [
+    {
+        id: "1",
+        title: "test",
+    },
+];
+---
+
+<div class="jobs-usa">
+    <div class="jobs-container">
+        <h2>test</h2>
+        <LineSVG />
+
+        <div class="jobs-link">
+            {
+                jobs.map((item) => {
+                    <div data-idx={item.id}>
+                        <div class="div">{item.title}</div>
+                    </div>;
+                })
+            }
+        </div>
+    </div>
+</div>
