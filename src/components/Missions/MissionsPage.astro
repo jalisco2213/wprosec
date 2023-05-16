@@ -53,4 +53,20 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
             line-height: 1.5;
         }
     }
+
+    @media (max-width: 1000px) {
+        .mission-about {
+            flex-direction: column-reverse;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .mission-about {
+            & p {
+                margin: 0 20px;
+                width: auto;
+                text-align: center;
+            }
+        }
+    }
 </style>

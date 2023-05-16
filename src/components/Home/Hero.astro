@@ -66,6 +66,7 @@ const actcenter = [
     .hero {
         margin-bottom: 6rem;
     }
+    
 
     .hero-container {
         @include mixins.flipdisp;
@@ -110,8 +111,43 @@ const actcenter = [
                 }
             }
 
-            &:nth-last-child(-n + 3) {
-                border-bottom: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .action {
+            grid-template-columns: repeat(3, 250px);
+
+            &-info {
+                &-link {
+                    & a {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .action {
+            grid-template-columns: repeat(2, 250px);
+
+            &-info {
+                line-height: 1.3;
+                padding: 2px 0;
+                border-bottom: 3px dotted #c6c6c6;
+            }
+        }
+    }
+    @media (max-width: 520px) {
+        .action {
+            grid-template-columns: repeat(1, 250px);
+
+            &-info {
+                line-height: 1.3;
+                padding: 2px 0;
+                border-bottom: 3px dotted #c6c6c6;
+
             }
         }
     }

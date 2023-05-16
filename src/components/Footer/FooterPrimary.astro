@@ -1,9 +1,9 @@
 ---
-const {img, title, subtitle} = Astro.props;
+const { img, title, subtitle } = Astro.props;
 ---
 
 <div class="footer-head_title_contacts_list">
-    <img src={img} alt="logo">
+    <img src={img} alt="logo" />
     <div>
         <span>{title}</span>
         <p>{subtitle}</p>
@@ -15,23 +15,37 @@ const {img, title, subtitle} = Astro.props;
         display: flex;
         align-items: start;
 
-    & img {
-          padding-right: 0.625rem;
-      }
+        & img {
+            padding-right: 0.625rem;
+        }
 
-    & div {
-          padding-bottom: 30px;
+        & div {
+            padding-bottom: 30px;
 
-    & span {
-          font-size: 1.2rem;
-          font-weight: 500;
-      }
+            & span {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
 
-    & p {
-          font-size: 1.1rem;
-          font-weight: 300;
-          padding-top: .4rem;
-      }
+            & p {
+                font-size: 1.1rem;
+                font-weight: 300;
+                padding-top: 0.4rem;
+            }
+        }
     }
+
+    @media (max-width: 600px) {
+        .footer-head_title_contacts_list {
+            & div {
+                & span {
+                    font-size: 0.9rem;
+                }
+
+                & p {
+                    font-size: 0.7rem;
+                }
+            }
+        }
     }
 </style>
