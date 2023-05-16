@@ -1,0 +1,78 @@
+---
+import LineSecSVG from "../svg/LineSecSVG.astro";
+---
+
+<div class="management-header">
+    <div class="management-left">
+        <span>Государственная прокуратура</span>
+        <ul>
+            <a href="#pros">
+                <li>Познакомьтесь с Государственным прокурором</li>
+            </a>
+            <a href="#">
+                <li>Новости</li>
+            </a>
+            <a href="https://forum.arizona-rp.com/threads/6148650/" target="_blank">
+                <li>Государственные прокуроры на протяжении всей истории</li>
+            </a>
+            <a href="/structure">
+                <li>Организационная структура</li>
+            </a>
+        </ul>
+    </div>
+    <div class="management-right">
+        <h2>Государственный прокурор</h2>
+        <LineSecSVG />
+        <img src="/iera12.png" alt="logo" />
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .management-header {
+        @include mixins.flipdisp;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .management-left {
+        width: 200px;
+        margin-top: 2rem;
+
+        & span {
+            color: #162e51;
+            line-height: 1.5;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        & ul {
+            margin-top: 10px;
+            & a {
+                color: #111;
+                font-size: 18px;
+                font-weight: 300;
+
+                & li {
+                    padding: 1.25rem;
+                    line-height: 1.3;
+                    border-top: 0.1px solid #2e2e2a;
+
+                    &:hover {
+                        background: #f6f6f6;
+                    }
+                }
+            }
+        }
+    }
+
+    .management-right {
+        & h2 {
+            font-size: 30px;
+            text-align: start;
+        }
+    }
+</style>

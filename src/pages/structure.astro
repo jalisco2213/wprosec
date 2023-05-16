@@ -1,19 +1,69 @@
 ---
 import LineSVG from "../components/svg/LineSVG.astro";
+import LineSecSVG from "../components/svg/LineSecSVG.astro";
 import Layout from "../layouts/Layout.astro";
+
+const structure = [
+    {
+        id: "0",
+        title: "Государственный прокурор",
+        subtitle:
+            "Выполняет функции надзора за соблюдением законности на территории Соединённых Штатов, контролирует деятельность правоохранительных органов. Входит в состав Руководства Правительства и Министерства Юстиции.Помимо других полномочий осуществляет общее руководство Федеральным Бюро Расследований и некоторыми другими ведомствами.",
+    },
+    {
+        id: "1",
+        title: "Заместитель Государственного прокурора",
+        subtitle:
+            "Прямой заместитель Государственного прокурора, фактически является правой рукой Государственного Прокурора и числится как второй руководитель Прокуратурой. Назначается и утверждается на должность Государственным Прокурором штата, также может быть снят указом Государственного Прокурора. В его обязанности входит контроль правоохранительных органов и в случае отсутствия Государственного Прокурора на своем посту, исполняет его обязанности.",
+    },
+    {
+        id: "2",
+        title: "Помощник государственного прокурора",
+        subtitle:
+            "Является помощником государственного прокурора, занимается курированием практикантов прокуратуры и ведёт работу с исками судейской коллегии. Назначается на должность Государственным прокурором и его заместителем, снимается точно так же.",
+    },
+    {
+        id: "3",
+        title: "Прокурор",
+        subtitle:
+            "Cотрудник Прокуратуры, выполняющий все обязанности своей профессии в пределах всего штата и выполняющий полноценный прокурорский надзор за ним. Повышается и утверждается Государственным прокурором и его заместителем, и снимается точно так же.",
+    },
+    {
+        id: "3",
+        title: "Помощник прокурора",
+        subtitle:
+            "Полноценный прокурор с ограничеными служебными правами и обязанностями, который выходит после успешной практикантуры на стажеровку и закрепляется за прокурором. Выдвигается в роле кандидата Помощником государственного прокурора, а утверждается Государственным прокурором или его заместителем.",
+    },
+];
 ---
 
 <Layout title="Prosecutor | Structure of prosecutor's">
     <section>
         <div class="struct-container">
-            <h2>Структура организации</h2>
-            <LineSVG />
-            <div class="struct-img">
-                <img
-                    src="/iera.png"
-                    alt="struct"
-                    style="width: 37.5rem; height: 37.5rem;"
-                />
+            <div class="struct-header">
+                <h2>Структура организации</h2>
+                <LineSVG />
+                <div class="struct-img">
+                    <img
+                        src="/iera.png"
+                        alt="struct"
+                        style="width: 37.5rem; height: 37.5rem;"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="struct-details">
+            <div class="struct-text">
+                <h2>Структура организации(текстовая версия)</h2>
+                <LineSecSVG />
+                {
+                    structure.map((item) => (
+                        <details data-idx={item.id}>
+                            <summary>{item.title}</summary>
+                            <p>{item.subtitle}</p>
+                        </details>
+                    ))
+                }
             </div>
         </div>
     </section>
@@ -22,12 +72,51 @@ import Layout from "../layouts/Layout.astro";
 <style lang="scss">
     @use "/src/assets/mixin" as mixins;
     .struct-container {
+        margin-bottom: 70px;
+    }
+
+    .struct-header {
         @include mixins.flipdisp;
-        margin-bottom: 100px;
     }
 
     .struct-img {
         display: flex;
         justify-content: center;
+    }
+
+    .struct-details {
+        background: #ecf1f7;
+        padding-bottom: 70px;
+    }
+
+    .struct-text {
+        @include mixins.flipdisp;
+
+        & h2 {
+            text-align: start;
+        }
+
+        & details {
+            cursor: pointer;
+            margin-bottom: 8px;
+            padding: 1.5rem 0;
+            list-style-type: none;
+
+            &:not(:last-child) {
+                border-bottom: #162e51 solid 0.1px;
+            }
+
+            & summary {
+                color: #162e51;
+                font-size: 20px;
+                font-weight: 400;
+                margin-bottom: 15px;
+            }
+
+            & p {
+                color: #111;
+                line-height: 1.25;
+            }
+        }
     }
 </style>

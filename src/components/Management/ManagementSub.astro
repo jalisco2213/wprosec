@@ -1,0 +1,131 @@
+---
+import LineSecSVG from "../svg/LineSecSVG.astro";
+
+---
+<div class="management-usa">
+    <div class="management-container">
+        <h2 id="pros">Об офисе</h2>
+        <LineSecSVG/>
+        <div class="management-info">
+            <div class="management-info_left">
+                <p>
+                    Прокуратура штата Уинслоу составляет единую федеральную
+                    централизованную систему органов и организаций и действует
+                    на основе подчинения нижестоящих прокуроров вышестоящим и
+                    Государственному прокурору штата Уинслоу, существляют
+                    полномочия независимо от федеральных органов государственной
+                    власти, органов государственной власти субъектов штата
+                    Уинслоу, органов местного самоуправления, общественных
+                    объединений и в строгом соответствии с действующими на
+                    территории штата Уинслоу законами; действуют гласно в той
+                    мере, в какой это не противоречит требованиям
+                    законодательства штата Уинслоу об охране прав и свобод
+                    граждан, а также законодательства штата Уинслоу о
+                    государственной и иной специально охраняемой законом тайне;
+                    информируют федеральные органы государственной власти,
+                    органы государственной власти субъектов штата Уинслоу,
+                    органы местного самоуправления, а также население о
+                    состоянии законности.
+                </p>
+            </div>
+            <div class="management-info_right">
+                <h3>Познакомьтесь с государственным прокурором</h3>
+
+                <div class="management-info_right_subtitle">
+                    <div>
+                        <p>Лидерство</p>
+                        <span>Кейшоун Халиско</span>
+                        <br />
+                        <span>Государственный прокурор</span>
+                        <p>Контакт</p>
+                        <a
+                            href="https://forum.arizona-rp.com/members/1274455/"
+                            target="_blank">Связаться с прокурором</a
+                        >
+                    </div>
+                    <img
+                        src="/prosec.png"
+                        alt=""
+                        style="width: 150px; height: 200px"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .management-usa {
+        background: #f6f6f6;
+        padding-bottom: 60px;
+    }
+
+    .management-container {
+        @include mixins.flipdisp;
+
+        & h2 {
+            text-align: start;
+        }
+    }
+
+    .management-info {
+        display: flex;
+        justify-content: space-between;
+
+        &_left {
+            width: 500px;
+            color: #666;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        &_right {
+            margin-left: 30px;
+            width: 410px;
+            height: 370px;
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.17);
+            background: #fff;
+
+            & h3 {
+                color: #162e51;
+                margin: 30px auto;
+                font-size: 22px;
+                font-weight: 700;
+                padding-bottom: 20px;
+                width: 360px;
+                border-bottom: 1px solid #e5e5e5;
+                text-align: center;
+            }
+
+            &_subtitle {
+                display: flex;
+                justify-content: space-evenly;
+
+                & div {
+                    & p {
+                        color: #162e51;
+                        font-size: 16px;
+                        margin: 20px 0;
+                        font-weight: 700;
+                    }
+
+                    & span {
+                        color: #111;
+                        margin-bottom: 30px;
+                    }
+
+                    & a {
+                        color: #111;
+
+                        &:hover {
+                            text-decoration: underline;
+                            color: #202020;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
