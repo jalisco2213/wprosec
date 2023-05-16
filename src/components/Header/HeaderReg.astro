@@ -1,0 +1,170 @@
+---
+import SearchSVG from "../svg/SearchSVG.astro";
+
+const place = [
+    {
+        id: "0",
+        title: "Фед.закон",
+        link: "https://forum.arizona-rp.com/threads/4712079/",
+    },
+    {
+        id: "1",
+        title: "Попросить помощи",
+        link: "https://forum.arizona-rp.com/threads/4602187/",
+    },
+];
+---
+
+<div class="reg-header">
+    <div class="nav-just">
+        <div class="usa-logo">
+            <a href="/">
+                <img src="/logo.svg" alt="" />
+            </a>
+        </div>
+        <div class="usa-place">
+            <div class="menu-btn" style="color: black;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="usa-place_menu">
+                {
+                    place.map((item) => (
+                        <li data-idx={item.id}>
+                            <a href={item.link} target="_blank">
+                                {item.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <form class="usa-search">
+                <input class="usa-search_input" placeholder="Искать..." />
+                <button>
+                    <SearchSVG />
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style lang="scss" is:global>
+    .reg-header {
+        background: #162e51;
+        border-bottom: #ffbe2e 3px solid;
+    }
+
+    .nav-just {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8rem;
+    }
+
+    .fa {
+        margin-left: 3px;
+    }
+
+    .usa-logo {
+        width: 18rem;
+        height: 6.25rem;
+    }
+
+    .usa-place {
+        &_menu {
+            display: flex;
+            margin-bottom: 10px;
+
+            & li {
+                padding-right: 10px;
+                margin-right: 10px;
+                font-size: 0.8rem;
+
+                &:not(:last-child) {
+                    border-right: 0.5px solid #6a798f;
+                }
+
+                &:hover {
+                    color: #ffd700;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .usa-search {
+        display: flex;
+        margin: auto;
+
+        &_input {
+            display: block;
+            margin: 0 auto;
+            padding-left: 0.3rem;
+            border: 1px solid white;
+            border-top-left-radius: 0.25rem;
+            border-bottom-left-radius: 0.25rem;
+            width: 100%;
+            height: 2rem;
+            font-size: 1rem;
+        }
+
+        & button {
+            background: #ffbe2e;
+            width: 2rem;
+            cursor: pointer;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0.25rem;
+            border-bottom-right-radius: 0.25rem;
+            transition: 0.3s ease;
+
+            &:hover {
+                background: #ffbe8e;
+                transition: 0.3s ease;
+            }
+        }
+    }
+
+    .menu-btn {
+        margin-right: 20px;
+        display: none;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .menu-btn span {
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #eee;
+        transition: all 0.5s;
+    }
+    .menu-btn span:nth-of-type(2) {
+        top: calc(50% - 5px);
+    }
+    .menu-btn span:nth-of-type(3) {
+        top: calc(50% + 5px);
+    }
+
+    @media (max-width: 768px) {
+        .reg-header {
+            padding: 0 20px;
+        }
+
+        .usa-place_menu,
+        .usa-search {
+            display: none;
+        }
+
+        .menu-btn {
+            display: block;
+        }
+    }
+</style>

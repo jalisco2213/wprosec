@@ -1,0 +1,18 @@
+---
+import HeaderReg from "./HeaderReg.astro";
+import HeaderJusc from "./HeaderJusc.astro";
+---
+
+<div class="container jusc-container">
+    <HeaderReg />
+    <HeaderJusc />
+</div>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .nav-just,
+    .nav {
+        @include mixins.flipdisp;
+    }
+</style>
