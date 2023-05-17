@@ -7,10 +7,7 @@ import LineSVG from "../svg/LineSVG.astro";
         <h2>Организационная структура</h2>
         <LineSVG />
         <div class="structure-card">
-            <img
-                src="/iera.png"
-                alt="iera"
-            />
+            <img src="/iera.png" alt="iera" />
             <div class="structure-card_info">
                 <div class="field-item_info">
                     <h3>Компоненты и агентства Прокуратуры</h3>
@@ -125,8 +122,10 @@ import LineSVG from "../svg/LineSVG.astro";
         }
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 460px) {
         .structure-card {
+            height: 500px;
+
             & img {
                 width: 300px;
                 height: 300px;

@@ -48,12 +48,7 @@ import FooterSecondary from "./FooterSecondary.astro";
                 ul4="Для сотрудников"
                 link4="#"
             />
-            <FooterSecondary
-                ul1="Трудоустройство"
-                link1="#"
-                ul2="Новости"
-                link2="#"
-            />
+            <FooterSecondary ul1="Трудоустройство" link1="#" />
         </div>
         <p>разработано под игровые события</p>
     </div>
@@ -100,6 +95,17 @@ import FooterSecondary from "./FooterSecondary.astro";
             opacity: 0.5;
             cursor: default;
             user-select: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .footer-head_title_contacts_list {
+            margin-right: 5px;
+        }
+
+        .footer-head_title_primary,
+        .secondary-list {
+            margin: 0 20px;
         }
     }
 </style>

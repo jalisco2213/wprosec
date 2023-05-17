@@ -13,6 +13,9 @@ const dropdown = [
             },
         ],
     },
+];
+
+const dropdown1 = [
     {
         id: "1",
         title: "Законодательство",
@@ -30,6 +33,9 @@ const dropdown = [
             },
         ],
     },
+];
+
+const dropdown2 = [
     {
         id: "2",
         title: "Карьера",
@@ -63,8 +69,42 @@ const dropdown = [
                             <div class="dropdown-content">
                                 <a href={item1.l1}>{item1.c1}</a>
                                 <a href={item1.l2}>{item1.c2}</a>
+                            </div>
+                        ))}
+                    </div>
+                ))
+            }
+            {
+                dropdown1.map((item) => (
+                    <div class="dropdown">
+                        <button class="dropbtn" data-idx={item.id}>
+                            {item.title}
+                            <i class="fa fa-caret-down" />
+                        </button>
+
+                        {item.enteries.map((item1) => (
+                            <div class="dropdown-content">
+                                <a href={item1.l1}>{item1.c1}</a>
+                                <a href={item1.l2}>{item1.c2}</a>
                                 <a href={item1.l3}>{item1.c3}</a>
                                 <a href={item1.l4}>{item1.c4}</a>
+                            </div>
+                        ))}
+                    </div>
+                ))
+            }
+            {
+                dropdown2.map((item) => (
+                    <div class="dropdown">
+                        <button class="dropbtn" data-idx={item.id}>
+                            {item.title}
+                            <i class="fa fa-caret-down" />
+                        </button>
+
+                        {item.enteries.map((item1) => (
+                            <div class="dropdown-content">
+                                <a href={item1.l1}>{item1.c1}</a>
+                                <a href={item1.l2}>{item1.c2}</a>
                             </div>
                         ))}
                     </div>
@@ -96,8 +136,42 @@ const dropdown = [
                             <div class="dropdown-content">
                                 <a href={item1.l1}>{item1.c1}</a>
                                 <a href={item1.l2}>{item1.c2}</a>
+                            </div>
+                        ))}
+                    </div>
+                ))
+            }
+            {
+                dropdown1.map((item) => (
+                    <div class="dropdown">
+                        <button class="dropbtn" data-idx={item.id}>
+                            {item.title}
+                            <i class="fa fa-caret-down" />
+                        </button>
+
+                        {item.enteries.map((item1) => (
+                            <div class="dropdown-content">
+                                <a href={item1.l1}>{item1.c1}</a>
+                                <a href={item1.l2}>{item1.c2}</a>
                                 <a href={item1.l3}>{item1.c3}</a>
                                 <a href={item1.l4}>{item1.c4}</a>
+                            </div>
+                        ))}
+                    </div>
+                ))
+            }
+            {
+                dropdown2.map((item) => (
+                    <div class="dropdown">
+                        <button class="dropbtn" data-idx={item.id}>
+                            {item.title}
+                            <i class="fa fa-caret-down" />
+                        </button>
+
+                        {item.enteries.map((item1) => (
+                            <div class="dropdown-content">
+                                <a href={item1.l1}>{item1.c1}</a>
+                                <a href={item1.l2}>{item1.c2}</a>
                             </div>
                         ))}
                     </div>
@@ -178,10 +252,7 @@ const dropdown = [
         z-index: 10;
         position: absolute;
         background: #2e2e2a;
-        display: flex;
-        justify-content: flex-end;
         width: 100%;
-        height: 400px;
         padding: 15px;
         transform: translateY(-500%);
         transition: transform 0.2s;
@@ -237,6 +308,13 @@ const dropdown = [
                         color: white;
                     }
                 }
+            }
+        }
+
+        .dropdown {
+            & button {
+                width: 100%;
+                text-align: start;
             }
         }
 

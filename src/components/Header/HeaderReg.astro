@@ -40,7 +40,13 @@ const place = [
                 }
             </ul>
             <form class="usa-search">
-                <input class="usa-search_input" placeholder="Искать..." />
+                <input
+                    class="usa-search_input"
+                    id="search-input"
+                    type="text"
+                    placeholder="Искать..."
+                />
+                <ul id="results"></ul>
                 <button>
                     <SearchSVG />
                 </button>
@@ -68,7 +74,7 @@ const place = [
 
     .usa-logo {
         width: 18rem;
-        height: 6.25rem;
+        height: 5.25rem;
     }
 
     .usa-place {
@@ -165,6 +171,13 @@ const place = [
 
         .menu-btn {
             display: block;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .usa-logo {
+            width: 13rem;
+            height: 4rem;
         }
     }
 </style>

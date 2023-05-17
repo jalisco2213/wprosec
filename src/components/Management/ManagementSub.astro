@@ -41,7 +41,7 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
                         >
                         <p>Контакт</p>
                         <a
-                            href="https://forum.arizona-rp.com/members/1274455/"
+                            href="https://forum.arizona-rp.com/threads/4602187/"
                             target="_blank">Связаться с прокурором</a
                         >
                     </div>
@@ -132,6 +132,11 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
     }
 
     @media (max-width: 910px) {
+        .line1,
+        .line2 {
+            margin: 0.2rem auto;
+        }
+
         .management-container {
             & h2 {
                 text-align: center;
@@ -143,7 +148,7 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
 
             &_left,
             &_right {
-                margin: 0 auto;
+                margin: 25px auto;
             }
 
             &_left {
@@ -158,14 +163,14 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
 
             &_left {
                 width: auto;
-                margin: 20px 20px;
-                font-size: .8rem;
+                margin: 0 20px;
+                font-size: 0.8rem;
             }
 
             &_right {
                 width: auto;
-                margin: 0 10px;
-                font-size: .7rem;
+                margin: 20px 10px;
+                font-size: 0.7rem;
 
                 & h3 {
                     font-size: 1.1rem;

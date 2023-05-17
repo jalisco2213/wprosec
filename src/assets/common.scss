@@ -58,3 +58,47 @@ h2 {
   font-size: 1.8rem;
   font-weight: 700;
 }
+
+.struct-details {
+  background: #ecf1f7;
+  padding-bottom: 70px;
+}
+
+.struct-text {
+  max-width: 65rem;
+  margin: 0 auto;
+
+  & h2 {
+    text-align: start;
+  }
+
+  & details {
+    cursor: pointer;
+    padding-bottom: 8px;
+    padding: 1.2rem 0;
+    list-style-type: none;
+
+    &:not(:last-child) {
+      border-bottom: #162e51 solid 0.1px;
+    }
+
+    & summary {
+      color: #162e51;
+      font-size: 20px;
+      font-weight: 400;
+      padding: 10px 0;
+
+    }
+
+    & p {
+      color: #111;
+      line-height: 1.4;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .struct-text {
+    margin: 0 20px;
+  }
+}

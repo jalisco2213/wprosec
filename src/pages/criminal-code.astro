@@ -734,7 +734,7 @@ import Layout from "../layouts/Layout.astro";
             <LineSVG />
             <div class="struct-details">
                 <div class="struct-text">
-                    <details >
+                    <details>
                         <summary>
                             Глава 1 - Нарушение общественного порядка
                         </summary>
@@ -813,7 +813,7 @@ import Layout from "../layouts/Layout.astro";
                             ответственному заместителю в размере 250.000$.
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary>
                             Глава 2 - Парковка и движение транспортного средства
                             в неположенном месте.
@@ -847,7 +847,7 @@ import Layout from "../layouts/Layout.astro";
                             имеет право выписать штраф в размере 35.000$;
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary>
                             Глава 3 - Езда на транспортном средстве.
                         </summary>
@@ -886,7 +886,7 @@ import Layout from "../layouts/Layout.astro";
                             штраф в размере 50.000$;
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary> Глава 4 - Затруднение движения.</summary>
                         <p>
                             4.1. За затруднение движения на проезжих частях,
@@ -908,7 +908,7 @@ import Layout from "../layouts/Layout.astro";
                             на свое усмотрение.
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary> Глава 5 - Для пешеходов</summary>
                         <p>
                             5.1. За передвижение по проезжей части дороги,
@@ -916,7 +916,7 @@ import Layout from "../layouts/Layout.astro";
                             размере 30.000$;
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary> Глава 6 - Специальные сигналы</summary>
                         <p>
                             6.1. Водители транспортного средства с включенной
@@ -939,7 +939,7 @@ import Layout from "../layouts/Layout.astro";
                             права на вождение;
                         </p>
                     </details>
-                    <details >
+                    <details>
                         <summary> Глава 7 - Воздушный транспорт.</summary>
                         <p>
                             7.1 - За парковку воздушных транспортных средств на
@@ -987,50 +987,16 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
-
-    <style lang="scss" is:global>
-        @use "/src/assets/mixin" as mixins;
-
-        .criminal {
-            background: #ecf1f7;
-        }
-
-        .criminal-container {
-            @include mixins.flipdisp;
-        }
-
-        .struct-details {
-            background: #ecf1f7;
-            padding-bottom: 70px;
-        }
-
-        .struct-text {
-            & h2 {
-                text-align: start;
-            }
-
-            & details {
-                cursor: pointer;
-                margin-bottom: 8px;
-                padding: 1.5rem 0;
-                list-style-type: none;
-
-                &:not(:last-child) {
-                    border-bottom: #162e51 solid 0.1px;
-                }
-
-                & summary {
-                    color: #162e51;
-                    font-size: 20px;
-                    font-weight: 400;
-                    margin-bottom: 5px;
-                }
-
-                & p {
-                    color: #111;
-                    line-height: 1.25;
-                }
-            }
-        }
-    </style>
 </Layout>
+
+<style lang="scss" is:global>
+    @use "/src/assets/mixin" as mixins;
+
+    .criminal {
+        background: #ecf1f7;
+    }
+
+    .criminal-container {
+        @include mixins.flipdisp;
+    }
+</style>

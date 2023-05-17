@@ -4,3 +4,5 @@ menuBtn.addEventListener('click', function () {
     menuBtn.classList.toggle('active');
     menu.classList.toggle('active');
 })
+
+console.log('А ну брысь от сюда!')

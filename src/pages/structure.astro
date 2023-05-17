@@ -85,42 +85,6 @@ const structure = [
         }
     }
 
-    .struct-details {
-        background: #ecf1f7;
-        padding-bottom: 70px;
-    }
-
-    .struct-text {
-        @include mixins.flipdisp;
-
-        & h2 {
-            text-align: start;
-        }
-
-        & details {
-            cursor: pointer;
-            margin-bottom: 8px;
-            padding: 1.5rem 0;
-            list-style-type: none;
-
-            &:not(:last-child) {
-                border-bottom: #162e51 solid 0.1px;
-            }
-
-            & summary {
-                color: #162e51;
-                font-size: 20px;
-                font-weight: 400;
-                margin-bottom: 15px;
-            }
-
-            & p {
-                color: #111;
-                line-height: 1.25;
-            }
-        }
-    }
-
     @media (max-width: 625px) {
         .struct-img {
             display: flex;
