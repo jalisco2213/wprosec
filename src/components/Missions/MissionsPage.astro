@@ -22,11 +22,7 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
             <br />
             <b>Всегда положитесь на Государственных Обвинителей.</b>
         </p>
-        <img
-            src="/dojimg.jpeg"
-            alt="logo"
-            style="width: 511px; height: 450px;"
-        />
+        <img src="/dojimg.jpeg" alt="logo" />
     </div>
 </div>
 
@@ -52,6 +48,11 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
             color: #162e51;
             line-height: 1.5;
         }
+
+        & img {
+            width: 511px;
+            height: 450px;
+        }
     }
 
     @media (max-width: 1000px) {
@@ -66,6 +67,12 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
                 margin: 0 20px;
                 width: auto;
                 text-align: center;
+                font-size: 1rem;
+            }
+
+            & img {
+                width: 300px;
+                height: 250px;
             }
         }
     }

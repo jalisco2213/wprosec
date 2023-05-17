@@ -12,7 +12,10 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
             <a href="#">
                 <li>Новости</li>
             </a>
-            <a href="https://forum.arizona-rp.com/threads/6148650/" target="_blank">
+            <a
+                href="https://forum.arizona-rp.com/threads/6148650/"
+                target="_blank"
+            >
                 <li>Государственные прокуроры на протяжении всей истории</li>
             </a>
             <a href="/structure">
@@ -73,6 +76,12 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
         & h2 {
             font-size: 30px;
             text-align: start;
+        }
+    }
+
+    @media (max-width: 910px) {
+        .management-header {
+            display: none;
         }
     }
 </style>

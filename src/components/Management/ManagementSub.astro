@@ -1,11 +1,11 @@
 ---
 import LineSecSVG from "../svg/LineSecSVG.astro";
-
 ---
+
 <div class="management-usa">
     <div class="management-container">
         <h2 id="pros">Об офисе</h2>
-        <LineSecSVG/>
+        <LineSecSVG />
         <div class="management-info">
             <div class="management-info_left">
                 <p>
@@ -36,7 +36,9 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
                         <p>Лидерство</p>
                         <span>Кейшоун Халиско</span>
                         <br />
-                        <span>Государственный прокурор</span>
+                        <span
+                            >Первый чернокожий <br /> Государственный прокурор</span
+                        >
                         <p>Контакт</p>
                         <a
                             href="https://forum.arizona-rp.com/members/1274455/"
@@ -124,6 +126,50 @@ import LineSecSVG from "../svg/LineSecSVG.astro";
                             color: #202020;
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 910px) {
+        .management-container {
+            & h2 {
+                text-align: center;
+            }
+        }
+
+        .management-info {
+            flex-direction: column-reverse;
+
+            &_left,
+            &_right {
+                margin: 0 auto;
+            }
+
+            &_left {
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .management-info {
+            flex-direction: column-reverse;
+
+            &_left {
+                width: auto;
+                margin: 20px 20px;
+                font-size: .8rem;
+            }
+
+            &_right {
+                width: auto;
+                margin: 0 10px;
+                font-size: .7rem;
+
+                & h3 {
+                    font-size: 1.1rem;
+                    width: auto;
                 }
             }
         }
