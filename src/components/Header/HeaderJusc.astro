@@ -1,55 +1,7 @@
 ---
-const dropdown = [
-    {
-        id: "0",
-        title: "О нас",
-        enteries: [
-            {
-                id: "0",
-                c1: "Государственный прокурор",
-                l1: "/management",
-                c2: "Организационная структура",
-                l2: "/structure",
-            },
-        ],
-    },
-];
-
-const dropdown1 = [
-    {
-        id: "1",
-        title: "Законодательство",
-        enteries: [
-            {
-                id: "1",
-                c1: 'Закон "О прокуратуре"',
-                l1: "/law",
-                c2: "Конституция",
-                l2: "/constitution",
-                c3: "Уголовный и административный кодексы",
-                l3: "/criminal-code",
-                c4: "Трудовой кодекс",
-                l4: "https://forum.arizona-rp.com/threads/5089213/",
-            },
-        ],
-    },
-];
-
-const dropdown2 = [
-    {
-        id: "2",
-        title: "Карьера",
-        enteries: [
-            {
-                id: "0",
-                c1: "Работа в прокуратуре",
-                l1: "/jobs",
-                c2: "Подать заявление в практикантуру",
-                l2: "https://forum.arizona-rp.com/threads/4602156/",
-            },
-        ],
-    },
-];
+import HeaderDropdown from "./HeaderDropdown.astro";
+import HeaderDropdown1 from "./HeaderDropdown1.astro";
+import HeaderDropdown2 from "./HeaderDropdown2.astro";
 ---
 
 <div class="jusc-sec_cont">
@@ -57,59 +9,31 @@ const dropdown2 = [
         <div class="nav-link">
             <a href="/">Главная</a>
             <a href="/missions"> Наша миссия</a>
-            {
-                dropdown.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
-
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
-            {
-                dropdown1.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
-
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                                <a href={item1.l3}>{item1.c3}</a>
-                                <a href={item1.l4}>{item1.c4}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
-            {
-                dropdown2.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
-
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
+            <HeaderDropdown
+                title="О нас"
+                c1="Государственный прокурор"
+                l1="/management"
+                c2="Организационная структура"
+                l2="/structure"
+            />
+            <HeaderDropdown1
+                title="Законодательство"
+                c1='Закон "О прокуратуре"'
+                l1="/law"
+                c2="Конституция"
+                l2="/constitution"
+                c3="Уголовный и административный кодексы"
+                l3="/criminal-code"
+                c4="Трудовой кодекс"
+                l4="https://forum.arizona-rp.com/threads/5089213/"
+            />
+            <HeaderDropdown2
+                title="Карьера"
+                c1="Работа в прокуратуре"
+                l1="/jobs"
+                c2="Подать заявление в практикантуру"
+                l2="https://forum.arizona-rp.com/threads/4602156/"
+            />
         </div>
     </nav>
     <div class="menu">
@@ -124,59 +48,32 @@ const dropdown2 = [
                     <a href="/missions"> Наша миссия</a>
                 </button>
             </div>
-            {
-                dropdown.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
 
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
-            {
-                dropdown1.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
-
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                                <a href={item1.l3}>{item1.c3}</a>
-                                <a href={item1.l4}>{item1.c4}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
-            {
-                dropdown2.map((item) => (
-                    <div class="dropdown">
-                        <button class="dropbtn" data-idx={item.id}>
-                            {item.title}
-                            <i class="fa fa-caret-down" />
-                        </button>
-
-                        {item.enteries.map((item1) => (
-                            <div class="dropdown-content">
-                                <a href={item1.l1}>{item1.c1}</a>
-                                <a href={item1.l2}>{item1.c2}</a>
-                            </div>
-                        ))}
-                    </div>
-                ))
-            }
+            <HeaderDropdown
+                title="О нас"
+                c1="Государственный прокурор"
+                l1="/management"
+                c2="Организационная структура"
+                l2="/structure"
+            />
+            <HeaderDropdown1
+                title="Законодательство"
+                c1='Закон "О прокуратуре"'
+                l1="/law"
+                c2="Конституция"
+                l2="/constitution"
+                c3="Уголовный и административный кодексы"
+                l3="/criminal-code"
+                c4="Трудовой кодекс"
+                l4="https://forum.arizona-rp.com/threads/5089213/"
+            />
+            <HeaderDropdown2
+                title="Карьера"
+                c1="Работа в прокуратуре"
+                l1="/jobs"
+                c2="Подать заявление в практикантуру"
+                l2="https://forum.arizona-rp.com/threads/4602156/"
+            />
         </div>
     </div>
 </div>

@@ -1,0 +1,17 @@
+---
+const { title, c1, c2, c3, c4, l1, l2, l3, l4 } = Astro.props;
+---
+
+<div class="dropdown">
+    <button class="dropbtn">
+        {title}
+        <i class="fa fa-caret-down"></i>
+    </button>
+
+    <div class="dropdown-content">
+        <a href={l1}>{c1}</a>
+        <a href={l2}>{c2}</a>
+        <a href={l3}>{c3}</a>
+        <a href={l4}>{c4}</a>
+    </div>
+</div>
