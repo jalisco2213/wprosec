@@ -80,8 +80,11 @@ const actcenter = [
         &-info {
             line-height: 1.3;
             padding: 2px 0;
-            border-bottom: 3px dotted #c6c6c6;
             cursor: pointer;
+
+            &:nth-child(-n + 3) {
+                border-bottom: 3px dotted #c6c6c6;
+            }
 
             &-link {
                 height: 6rem;
@@ -117,6 +120,9 @@ const actcenter = [
             grid-template-columns: repeat(3, 250px);
 
             &-info {
+                &:nth-child(n + 5) {
+                    border-bottom: none;
+                }
                 &-link {
                     & a {
                         font-size: 0.8rem;
@@ -145,6 +151,10 @@ const actcenter = [
                 line-height: 1.3;
                 padding: 2px 0;
                 border-bottom: 3px dotted #c6c6c6;
+
+                &:nth-child(-n + 5) {
+                    border-bottom: 3px dotted #c6c6c6;
+                }
             }
         }
     }
