@@ -1,0 +1,31 @@
+---
+import LineSVG from "../components/svg/LineSVG.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Prosecutors | Join to the prosecutor's">
+    <div class="join-container">
+        <h2>Заявление на должность <br /> практиканта прокуратуры</h2>
+        <LineSVG />
+
+        <div class="link-join">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfZZfcnxmhBhSyiS3ZqwYjrkgVO9rKgEXccJukYz4IiEsvDHQ/viewform"
+                width="750px"
+                height="700px">Загрузка...</iframe
+            >
+        </div>
+    </div>
+</Layout>
+
+<style lang="scss" is:global>
+    .join-container {
+        background: #f6f6f6;
+    }
+
+    .link-join {
+        padding-bottom: 80px;
+        display: flex;
+        justify-content: center;
+    }
+</style>
